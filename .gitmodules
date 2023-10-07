@@ -1,4 +1,4 @@
 [submodule "extern/Firmware"]
 	path = extern/Firmware
-	url = git@github.com:Darren-Serious/Firmware.git
+	url = https://github.com/Darren-Serious/Firmware.git
 	branch = gd32f10x_v2.2.4
