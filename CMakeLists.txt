@@ -30,7 +30,7 @@ set(MCU_FLAGS -mcpu=cortex-m3 -mthumb)
 
 target_compile_options(${CMAKE_PROJECT_NAME}.elf PRIVATE ${MCU_FLAGS})
 target_link_options(${CMAKE_PROJECT_NAME}.elf PRIVATE ${MCU_FLAGS}
-  -T /home/seer/project/PracticeFor/extern/Firmware/ldscripts/gd32f10x_flash.ld)
+  -T ${PROJECT_SOURCE_DIR}/extern/Firmware/ldscripts/gd32f10x_flash.ld)
 
 add_custom_command(TARGET ${CMAKE_PROJECT_NAME}.elf POST_BUILD
   COMMAND ${CMAKE_OBJCOPY} -Oihex ${CMAKE_PROJECT_NAME}.elf ${CMAKE_PROJECT_NAME}.hex

@@ -1,7 +1,7 @@
 #!/bin/bash
 
 build_path=build
-docker_name="ubuntu20.04"
+docker_name="env_ede"
 shell_path=$(dirname $(readlink -f "$0"))
 
 docker_run() {
