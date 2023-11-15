@@ -5,14 +5,14 @@ docker_name="env_ede"
 shell_path=$(dirname $(readlink -f "$0"))
 
 docker_run() {
-  if [[ -n $(sudo docker ps -q -f "name=${docker_name}") ]];then
+  if [[ -n $(docker ps -q -f "name=${docker_name}") ]];then
     echo "docker exec"
-    sudo docker exec -it -w ${shell_path} ${docker_name} /bin/bash
+    docker exec -it -w ${shell_path} ${docker_name} /bin/bash
   else
     echo "docker start"
-    sudo docker start ${docker_name}
+    docker start ${docker_name}
     echo "docker exec"
-    sudo docker exec -it -w ${shell_path} ${docker_name} /bin/bash
+    docker exec -it -w ${shell_path} ${docker_name} /bin/bash
   fi
 }
 
